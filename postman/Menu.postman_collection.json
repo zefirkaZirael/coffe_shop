@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "6cac6032-7118-4bdb-8905-4764a6253ed3",
+		"name": "Menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39030219"
+	},
+	"item": [
+		{
+			"name": "Add new menu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"Espresso1\",\n        \"description\": \"A strong, black coffee made by forcing steam through ground coffee beans\",\n        \"price\": 2.5,\n        \"tags\": [\n         \n        ],\n        \"menuitems\": [{\n            \"inventory_id\":5,\n            \"quantity\":15\n        }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Retrieve all menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a specific menu item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a menu",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Espresso12\",\n    \"description\": \"A strong, black coffee made by forcing steam through ground coffee beans\",\n    \"price\": 2.5,\n    \"tags\": [],\n    \"menuitems\": [{\n    \"inventory_id\":5,\n    \"quantity\":15\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Menu",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all menu price history",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve specific menu price history",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

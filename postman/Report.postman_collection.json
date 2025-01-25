@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "06168562-35b0-4cb6-9eeb-52d229b3302b",
+		"name": "Report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39030219"
+	},
+	"item": [
+		{
+			"name": "Total sales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reports/total-sales",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"total-sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Popular-items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reports/popular-items",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"popular-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Number of Ordered Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reports/numberOfOrderedItems?startDate=10.11.2024&endDate=11.11.2024",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"numberOfOrderedItems"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "10.11.2024"
+						},
+						{
+							"key": "endDate",
+							"value": "11.11.2024"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Full Text Search Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reports/search?q=chocolate cake&filter=menu,orders&minPrice=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "chocolate cake"
+						},
+						{
+							"key": "filter",
+							"value": "menu,orders"
+						},
+						{
+							"key": "minPrice",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get leftovers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"currentPage\": 1,\n    \"hasNextPage\": true,\n    \"pageSize\": 4,\n    \"totalPages\": 10,\n    \"data\": [\n        {\n            \"name\": \"croissant\",\n            \"quantity\": 109,\n            \"price\": 950\n        },\n        {\n            \"name\": \"sugar\",\n            \"quantity\": 93,\n            \"price\": 50\n        },\n        {\n            \"name\": \"muffin\",\n            \"quantity\": 63,\n            \"price\": 350\n        },\n        {\n            \"name\": \"milk\",\n            \"quantity\": 1,\n            \"price\": 200\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/reports/getLeftOvers?sortBy=quantity&page=1&pageSize=4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"getLeftOvers"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "quantity"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"orders\": [\n       {\n           \"customer_id\": 200,\n           \"items\": [\n               {\n                   \"menu_item_id\": 2,\n                   \"quantity\": 2\n               },\n               {\n                   \"menu_item_id\": 3,\n                   \"quantity\": 1\n               }\n           ]\n       },\n       {\n           \"customer_id\": 2,\n           \"items\": [\n               {\n                   \"menu_item_id\": 2,\n                   \"quantity\": 1000000000000000\n               }\n           ]\n       }\n   ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/batch-process",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"batch-process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrderedItemsByPeriod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reports/orderedItemsByPeriod?period=day&year=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"orderedItemsByPeriod"
+					],
+					"query": [
+						{
+							"key": "period",
+							"value": "day"
+						},
+						{
+							"key": "month",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

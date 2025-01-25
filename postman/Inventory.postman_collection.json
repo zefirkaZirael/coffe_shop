@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "d3f251be-9c87-4d85-a36b-746c27fbfb7d",
+		"name": "Inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39030219"
+	},
+	"item": [
+		{
+			"name": "Add Inventory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Espresso Shot\",\n    \"stock_level\":20,\n    \"reorder_level\":50,\n    \"unit_type\": \"shots\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/inventory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve all inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/inventory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/inventory/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update inventory",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Espresso Shot\",\n    \"stock_level\":20000,\n    \"reorder_level\":500,\n    \"unit_type\": \"shotds\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/inventory/20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete inventory",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/inventory/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fill inventory item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"inventory_id\":2,\n    \"price\":65.25,\n    \"quantity\":650.65\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/inventory-transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory-transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve  all transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/inventory-transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory-transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve  transaction by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/inventory-transaction/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory-transaction",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
