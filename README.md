@@ -1,11 +1,11 @@
 
-### Project Context
+# Project Context
 
 The Frappuccino project is a coffee shop management system built with PostgreSQL for efficient data management and robust querying. The goal of the project is to handle a wide range of operations related to order management, menu items, inventory, and reporting. It utilizes PostgreSQL as the database system to take advantage of its advanced features like complex queries, aggregation capabilities, and relational structure.
 
 The project is designed to provide a scalable and maintainable solution for managing orders, inventory, and menu items, while offering advanced reporting tools. Key features include dynamic order processing, customizable menu items, real-time inventory tracking, and detailed analytics to help make data-driven business decisions.
 ## Key Features and Components
-# 1. Database Design and Structure
+### 1. Database Design and Structure
 
 The Frappuccino project uses a relational database schema in PostgreSQL, ensuring data integrity and efficient querying. The database schema is designed to handle various aspects of the coffee shop's operations:
 
@@ -19,7 +19,7 @@ The Frappuccino project uses a relational database schema in PostgreSQL, ensurin
 
     Price History and Status History: Tracks changes to menu item prices and order status transitions over time.
 
-# 2. PostgreSQL Data Types
+### 2. PostgreSQL Data Types
 
 To handle specific data needs, several PostgreSQL data types are employed:
 
@@ -31,7 +31,7 @@ To handle specific data needs, several PostgreSQL data types are employed:
 
     Timestamp with Time Zone: Used to track key events like order dates, inventory updates, and price changes, with full time zone support.
 
-# 3. Endpoints and SQL Queries
+### 3. Endpoints and SQL Queries
 
 The project features multiple endpoints that enable users to manage orders, menu items, inventory, and generate reports. These endpoints are backed by SQL queries to interact with the PostgreSQL database. The key endpoints include:
 
@@ -55,7 +55,7 @@ The project features multiple endpoints that enable users to manage orders, menu
 
         Perform full-text search across orders, menu items, and customer data for advanced querying.
 
-# 4. Aggregation and Reporting
+### 4. Aggregation and Reporting
 
 Advanced reporting endpoints allow users to gather insights into their operations, such as:
 
@@ -69,7 +69,7 @@ Advanced reporting endpoints allow users to gather insights into their operation
 
     Batch Order Processing: Process multiple orders at once while ensuring inventory consistency.
 
-# 5. Containerization
+### 5. Containerization
 
 The Frappuccino project is containerized using Docker to simplify deployment and testing. With Docker Compose, the project can be set up with a single command, which automatically initializes the PostgreSQL database and runs the application in separate containers.
 
@@ -80,7 +80,7 @@ The project includes:
     An init.sql file to initialize the database schema, including table creation, relationships, and mock data insertion.
 
 By using Docker, the project ensures consistency across different environments, making it easy to test and deploy.
-# 6. Mock Data and Testing
+### 6. Mock Data and Testing
 
 The database is populated with mock data for realistic testing scenarios. This includes:
 
